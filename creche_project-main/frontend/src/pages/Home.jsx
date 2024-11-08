@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, useInView } from 'framer-motion';
+
 import { FaUserNurse, FaClock, FaBabyCarriage, FaHome, FaExclamationTriangle, FaChild } from 'react-icons/fa';
 import { gsap } from 'gsap';
 
@@ -31,10 +32,10 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white font-sans">
+    <div className="min-h-screen bg-gradient-to-b from-indigo-100 to-white px-10 md:px-20 font-sans">
       {/* Hero Section */}
       <motion.div
-        className="flex flex-col md:flex-row items-center justify-center h-screen bg-gradient-to-r from-indigo-300 to-indigo-600 text-white rounded-lg shadow-lg p-10 mx-10 mt-10"
+        className="flex flex-col md:flex-row items-center justify-center h-screen"
         initial={{ opacity: 0 }}
         animate={isHeroInView ? { opacity: 1 } : {}}
         transition={{ duration: 1 }}
@@ -42,7 +43,7 @@ const Home = () => {
       >
         <div className="flex-1 flex flex-col items-start justify-center space-y-6">
           <motion.h1
-            className="text-5xl font-bold"
+            className="text-5xl font-bold text-indigo-700"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
@@ -51,7 +52,7 @@ const Home = () => {
           </motion.h1>
 
           {/* Description of Caring Nanny */}
-          <div className="text-lg font-medium">
+          <div className="text-lg font-medium text-indigo-600">
             <p>
               Caring Nanny is a trusted platform that connects families with experienced and
               reliable caregivers. Whether you need a full-time nanny, part-time help, or occasional
@@ -59,14 +60,14 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="text-2xl font-semibold">
-            👩‍👧 <span className="text-white">Connecting Families & Caregivers</span>
+          <div className="text-2xl font-semibold text-indigo-600">
+            👩‍👧 <span className="text-indigo-700">Connecting Families & Caregivers</span>
           </div>
 
           {/* Book Now Button */}
           <button
             onClick={handleBookNow}
-            className="mt-4 px-6 py-3 bg-white text-indigo-700 font-semibold rounded-lg shadow-md hover:bg-gray-100 transition duration-300"
+            className="mt-4 px-6 py-3 bg-indigo-700 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-800 transition duration-300"
           >
             Book Now
           </button>
@@ -89,7 +90,7 @@ const Home = () => {
 
       {/* Services We Provide Section */}
       <motion.div
-        className="py-16 mt-20 text-center"
+        className="py-16 mt-20 bg-indigo-50 text-center"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1 }}
@@ -174,4 +175,3 @@ const Home = () => {
 };
 
 export default Home;
-
